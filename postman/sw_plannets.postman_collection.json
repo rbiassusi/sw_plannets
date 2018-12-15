@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "d1d0be59-ac3f-48ba-962d-a0c1a4711b39",
+		"name": "sw_plannets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista planetas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{host_port}}/api/v1/planeta/",
+					"protocol": "http",
+					"host": [
+						"{{host_port}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planeta",
+						""
+					]
+				},
+				"description": "Lista os planetas"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar planeta Yavin IV",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Yavin IV\",\n\t\"clima\": \"temperate, tropical\",\n\t\"terreno\": \"jungle, rainforests\"\n}"
+				},
+				"url": {
+					"raw": "http://{{host_port}}/api/v1/planeta/",
+					"protocol": "http",
+					"host": [
+						"{{host_port}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planeta",
+						""
+					]
+				},
+				"description": "Cria o planeta Yavin IV"
+			},
+			"response": []
+		},
+		{
+			"name": "Filtra pelo nome Yavin IV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{host_port}}/api/v1/planeta/?nome=Yavin IV",
+					"protocol": "http",
+					"host": [
+						"{{host_port}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planeta",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Yavin IV"
+						}
+					]
+				},
+				"description": "Filtra planetas pelo nome Yavin IV"
+			},
+			"response": []
+		},
+		{
+			"name": "Filtra pelo ID do planeta Yavin IV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{host_port}}/api/v1/planeta/5c1509f6728f4a626a8aa541/",
+					"protocol": "http",
+					"host": [
+						"{{host_port}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planeta",
+						"5c1509f6728f4a626a8aa541",
+						""
+					]
+				},
+				"description": "Filtra pelo id do planeta, no caso Yavin IV, caso planeta não exista retorna 404"
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta pelo ID do planeta Yavin IV",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{host_port}}/api/v1/planeta/5c1509f6728f4a626a8aa541/",
+					"protocol": "http",
+					"host": [
+						"{{host_port}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planeta",
+						"5c1509f6728f4a626a8aa541",
+						""
+					]
+				},
+				"description": "Deleta objeto"
+			},
+			"response": []
+		}
+	]
+}
